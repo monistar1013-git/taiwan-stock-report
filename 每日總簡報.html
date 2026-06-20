@@ -192,6 +192,31 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-t
 </head>
 <body>
 
+<!-- 密碼遮罩 -->
+<div id="pwdOverlay" style="
+  position:fixed;inset:0;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;z-index:9999;">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:40px 48px;text-align:center;box-shadow:0 8px 32px rgba(160,120,60,.18);min-width:300px">
+    <div style="font-size:48px;margin-bottom:12px">📊</div>
+    <div style="font-size:20px;font-weight:800;color:var(--accent);margin-bottom:6px">台股每日總簡報</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:24px">請輸入密碼</div>
+    <input id="pwdInput" type="password" placeholder="密碼"
+      style="width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:8px;
+        font-size:16px;background:#fdf8f0;color:var(--text);outline:none;
+        font-family:inherit;text-align:center;letter-spacing:4px">
+    <div id="pwdError" style="display:none;color:#b03020;font-size:13px;margin-top:10px">密碼錯誤，請再試一次</div>
+    <button onclick="checkPwd()"
+      style="margin-top:16px;width:100%;padding:12px;background:var(--accent);color:#fff;
+        border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">
+      進入
+    </button>
+  </div>
+</div>
+
+<!-- 主內容 -->
+<div id="appContent" style="display:none">
+
 <header>
   <div class="hicon">📊</div>
   <div class="htitle">
@@ -872,9 +897,43 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-t
 
 </div>
 
-<footer>自動生成於 2026-06-20 20:14 &nbsp;·&nbsp; 台股盤後自動選股系統</footer>
+<footer>自動生成於 2026-06-20 20:21 &nbsp;·&nbsp; 台股盤後自動選股系統</footer>
+</div><!-- /appContent -->
 
 <script>
+// ── 密碼保護 ──
+const PWD_HASH = "e4c04539d8f7e6e6f0ed2ad0f63789c9d33ffdc30fa1ad03c3a0dd63f5b58b79";
+const STORAGE_KEY = "stock_auth";
+
+async function sha256(msg) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+
+async function checkPwd() {
+  const input = document.getElementById("pwdInput").value;
+  const hash  = await sha256(input);
+  if (hash === PWD_HASH) {
+    sessionStorage.setItem(STORAGE_KEY, "1");
+    document.getElementById("pwdOverlay").style.display = "none";
+    document.getElementById("appContent").style.display = "block";
+  } else {
+    document.getElementById("pwdError").style.display = "block";
+    document.getElementById("pwdInput").value = "";
+    document.getElementById("pwdInput").focus();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (sessionStorage.getItem(STORAGE_KEY) === "1") {
+    document.getElementById("pwdOverlay").style.display = "none";
+    document.getElementById("appContent").style.display = "block";
+  }
+  document.getElementById("pwdInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") checkPwd();
+  });
+});
+
 // ── Tab 切換 ──
 function switchTab(idx){
   document.querySelectorAll('.panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
