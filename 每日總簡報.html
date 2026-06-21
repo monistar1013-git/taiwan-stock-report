@@ -188,6 +188,64 @@ nav.tabs button.active{color:var(--accent);border-bottom-color:var(--accent);fon
 .ms-bar.fund{background:#1a6080}
 
 footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:40px}
+
+/* ── 關鍵字高亮 ── */
+mark.kw{border-radius:3px;padding:1px 5px;font-style:normal;font-weight:700}
+mark.kw-strong{background:#fde8d0;color:#b8400a}
+mark.kw-buy{background:#d8f0d8;color:#1a6a1a}
+mark.kw-sell{background:#fdd8d8;color:#8a0000}
+mark.kw-fii{background:#d8e8f8;color:#1a4080;font-weight:600}
+mark.kw-itf{background:#ead8f8;color:#5a1a80;font-weight:600}
+mark.kw-margin{background:#fff0d8;color:#7a4000;font-weight:600}
+mark.kw-num{color:var(--accent);font-weight:800;background:none;padding:0}
+mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
+
+/* ── AI 股票卡片 ── */
+.ai-stock-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:28px;overflow:hidden;box-shadow:0 3px 14px var(--shadow)}
+.ai-card-header{display:flex;align-items:center;gap:12px;padding:16px 22px;background:var(--grad);border-bottom:1px solid var(--border)}
+.ai-card-rank{font-size:26px;min-width:32px}
+.ai-card-code{font-size:18px;font-weight:800;color:var(--text)}
+.ai-card-name{font-size:15px;color:var(--muted);margin-left:6px}
+.ai-card-verdict{margin-left:auto;padding:5px 16px;border-radius:20px;font-size:13px;font-weight:700;white-space:nowrap}
+.vc-strong{background:#fde8d0;color:#b8400a;border:1px solid #f4b08a}
+.vc-buy{background:#d8f0d8;color:#1a6a1a;border:1px solid #8ad48a}
+.vc-watch{background:#f0f0d0;color:#6a6a00;border:1px solid #d4d48a}
+
+/* 價格區間 */
+.price-range-box{padding:16px 22px 10px;background:#fdfaf5;border-bottom:1px solid var(--border)}
+.price-range-title{font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.price-range-bar-wrap{position:relative;height:36px;margin:0 4px}
+.price-range-track{position:absolute;top:15px;left:0;right:0;height:6px;background:#e8dcc8;border-radius:4px}
+.price-range-zone{position:absolute;top:15px;height:6px;background:var(--accent);border-radius:4px;opacity:.85}
+.price-range-target{position:absolute;top:8px;width:3px;height:20px;background:var(--green);border-radius:2px;transform:translateX(-50%)}
+.price-range-stop{position:absolute;top:8px;width:3px;height:20px;background:var(--red);border-radius:2px;transform:translateX(-50%)}
+.price-range-current{position:absolute;top:6px;width:4px;height:24px;background:#1a6080;border-radius:2px;transform:translateX(-50%);box-shadow:0 0 0 2px #fff}
+.price-range-label{position:absolute;top:0;font-size:9px;transform:translateX(-50%);white-space:nowrap;font-weight:700}
+.price-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:10px;border-top:1px dashed var(--border)}
+.pill{display:flex;flex-direction:column;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 16px;min-width:80px}
+.pill-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.pill-val{font-size:16px;font-weight:800}
+.pill-stop .pill-val{color:var(--red)}
+.pill-entry .pill-val{color:var(--accent);font-size:13px}
+.pill-target .pill-val{color:var(--green)}
+.pill-price .pill-val{color:var(--accent3)}
+
+/* 如果是我的錢 */
+.my-money-quote{background:linear-gradient(135deg,#fef9f0,#fdf4e3);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;font-weight:600;color:#5a3510;box-shadow:0 2px 8px rgba(180,100,20,.12)}
+
+/* AI card body */
+.ai-card-body{padding:18px 22px}
+.ai-card-body h3{font-size:14px;color:var(--accent);margin:18px 0 7px;font-weight:700;border-left:3px solid var(--accent);padding-left:9px}
+.ai-card-body p{margin-bottom:9px;font-size:14px;line-height:1.75}
+.ai-card-body strong{color:var(--text)}
+.ai-card-body ul{padding-left:18px;margin-bottom:10px}
+.ai-card-body li{font-size:14px;margin-bottom:4px}
+.ai-card-body hr{border:none;border-top:1px dashed var(--border);margin:16px 0}
+.ai-card-body table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+.ai-card-body th,.ai-card-body td{padding:8px 12px;border:1px solid var(--border);text-align:left}
+.ai-card-body th{background:#f5e6cc;color:var(--accent);font-weight:700}
+.ai-card-body tr:nth-child(even) td{background:#fdf8f0}
+.ai-card-body blockquote{background:#fffbf0;border-left:5px solid var(--accent);padding:12px 18px;border-radius:0 10px 10px 0;margin:14px 0;font-size:14px;color:#5a3510;box-shadow:0 1px 5px var(--shadow)}
 </style>
 </head>
 <body>
@@ -235,411 +293,306 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-t
 <div class="panel active" id="tab0">
 
   <div class="stitle">
-    <span class="ico">🔍</span>
-    <h2>前10名初步評分</h2>
-    <span class="tag">stock_screener.py</span>
-  </div>
-
-  <!-- 圖表 -->
-  <div class="chart-box">
-    <h3>評分 &amp; 距高點分布</h3>
-    <div class="chart-row">
-      <div class="chart-wrap"><canvas id="chartScore"></canvas></div>
-      <div class="chart-wrap"><canvas id="chartDist"></canvas></div>
-    </div>
-  </div>
-
-  <!-- 個股卡片 -->
-  
-        <div class="scard" data-rank="0">
-          <div class="scard-top">
-            <span class="semoji">🥇</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/1216.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">1216 <span class="sname">統一</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">食品工業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">35</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:35%"></div></div>
-            </div>
-          </div>
-          <div class="sitem ok">✅ 換手量（今28281張 &gt; 均量×1.5，漲跌-2.0%）+15</div><div class="sitem ok">✅ 回測MA10（75.0，距離0.6%）+10</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>74.5</strong></span>
-              <span class="pr">高點 <strong>77.7</strong></span>
-              <span class="pr dist-ok">距高點 <strong>4.1%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-ok" style="width:10%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="1">
-          <div class="scard-top">
-            <span class="semoji">🥈</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/4904.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">4904 <span class="sname">遠傳</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">通信網路業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">35</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:35%"></div></div>
-            </div>
-          </div>
-          <div class="sitem ok">✅ 換手量（今42315張 &gt; 均量×1.5，漲跌-0.9%）+15</div><div class="sitem ok">✅ 回測MA10（107.3，距離1.1%）+10</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>108.5</strong></span>
-              <span class="pr">高點 <strong>113.5</strong></span>
-              <span class="pr dist-ok">距高點 <strong>4.4%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-ok" style="width:11%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="2">
-          <div class="scard-top">
-            <span class="semoji">🥉</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/6770.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">6770 <span class="sname">力積電</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">半導體業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">25</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:25%"></div></div>
-            </div>
-          </div>
-          <div class="sitem muted">（無加分項）</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>74.2</strong></span>
-              <span class="pr">高點 <strong>94.5</strong></span>
-              <span class="pr dist-sweet">距高點 <strong>21.5%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-sweet" style="width:54%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="3">
-          <div class="scard-top">
-            <span class="semoji">4️⃣</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/6207.TWO/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">6207 <span class="sname">雷科</span></a>
-                <span class="smkt">上櫃</span></div>
-              <div class="sind">電子零組件業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">25</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:25%"></div></div>
-            </div>
-          </div>
-          <div class="sitem ok">✅ 換手量（今29868張 &gt; 均量×1.5，漲跌+0.9%）+15</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>165.5</strong></span>
-              <span class="pr">高點 <strong>171.0</strong></span>
-              <span class="pr dist-ok">距高點 <strong>3.2%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-ok" style="width:8%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="4">
-          <div class="scard-top">
-            <span class="semoji">5️⃣</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/6116.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">6116 <span class="sname">彩晶</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">光電業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">25</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:25%"></div></div>
-            </div>
-          </div>
-          <div class="sitem muted">（無加分項）</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>18.8</strong></span>
-              <span class="pr">高點 <strong>22.7</strong></span>
-              <span class="pr dist-sweet">距高點 <strong>17.2%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-sweet" style="width:43%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="5">
-          <div class="scard-top">
-            <span class="semoji">6️⃣</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/2489.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">2489 <span class="sname">瑞軒</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">光電業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">25</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:25%"></div></div>
-            </div>
-          </div>
-          <div class="sitem muted">（無加分項）</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>48.1</strong></span>
-              <span class="pr">高點 <strong>57.7</strong></span>
-              <span class="pr dist-sweet">距高點 <strong>16.6%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-sweet" style="width:42%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="6">
-          <div class="scard-top">
-            <span class="semoji">7️⃣</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/2845.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">2845 <span class="sname">遠東銀</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">金融保險業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">20</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:20%"></div></div>
-            </div>
-          </div>
-          <div class="sitem ok">✅ 回測MA10（12.8，距離1.1%）+10</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>12.9</strong></span>
-              <span class="pr">高點 <strong>13.4</strong></span>
-              <span class="pr dist-ok">距高點 <strong>3.7%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-ok" style="width:9%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="7">
-          <div class="scard-top">
-            <span class="semoji">8️⃣</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/1101.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">1101 <span class="sname">台泥</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">水泥工業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">20</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:20%"></div></div>
-            </div>
-          </div>
-          <div class="sitem ok">✅ 回測MA10（24.3，距離0.7%）+10</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>24.5</strong></span>
-              <span class="pr">高點 <strong>25.4</strong></span>
-              <span class="pr dist-ok">距高點 <strong>3.5%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-ok" style="width:9%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="8">
-          <div class="scard-top">
-            <span class="semoji">9️⃣</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/3042.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">3042 <span class="sname">晶技</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">電子零組件業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">20</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:20%"></div></div>
-            </div>
-          </div>
-          <div class="sitem ok">✅ 縮量回檔（今32055張 &lt; 均量×0.7，跌3.6%）+10</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>216.0</strong></span>
-              <span class="pr">高點 <strong>247.0</strong></span>
-              <span class="pr dist-ok">距高點 <strong>12.6%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-ok" style="width:32%"></div></div>
-            </div>
-        </div>
-
-        <div class="scard" data-rank="9">
-          <div class="scard-top">
-            <span class="semoji">🔟</span>
-            <div class="sinfo">
-              <div class="scode"><a href="https://tw.stock.yahoo.com/quote/2542.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">2542 <span class="sname">興富發</span></a>
-                <span class="smkt">上市</span></div>
-              <div class="sind">建材營造業</div>
-            </div>
-            <div class="sscore-wrap">
-              <div class="sscore">20</div>
-              <div class="sscore-label">分</div>
-              <div class="sscore-bar-bg"><div class="sscore-bar" style="width:20%"></div></div>
-            </div>
-          </div>
-          <div class="sitem ok">✅ 回測MA10（44.5，距離0.7%）+10</div>
-          
-            <div class="price-row">
-              <span class="pr">現價 <strong>44.8</strong></span>
-              <span class="pr">高點 <strong>47.1</strong></span>
-              <span class="pr dist-ok">距高點 <strong>5.0%</strong></span>
-              <div class="dist-bar-wrap"><div class="dist-bar dist-ok" style="width:12%"></div></div>
-            </div>
-        </div>
-
-  <!-- 分隔線 -->
-  <div class="sep">
-    <div class="sep-line"></div>
-    <div class="sep-label">🤖 AI 深度分析</div>
-    <div class="sep-line"></div>
-  </div>
-
-  <!-- 選股 AI 分析 -->
-  <div class="stitle">
     <span class="ico">🎯</span>
     <h2>選股 AI 分析</h2>
-    <span class="tag">僅買進 / 強力買進</span>
+    <span class="tag">買進 / 強力買進</span>
   </div>
-  <div class="ai-box">
-    <p>﻿# 台股選股後分析 2026/06/21_selection</p>
-<p>10 隻選股，選上 6 隻（強力買 3 隻，買 3 隻）</p>
+
+  
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">🥇</span>
+        <a href="https://tw.stock.yahoo.com/quote/2026.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">2026</span>
+          <span class="ai-card-name"></span>
+        </a>
+        <span class="ai-card-verdict vc-watch">觀望</span>
+      </div>
+      
+      <div class="ai-card-body"><p>10 隻選股，選上 6 隻（強力買 3 隻，買 3 隻）</p>
 <p class='spacer'></p>
 <hr>
 <p class='spacer'></p>
 <h2>一、個股詳細分析</h2>
 <p class='spacer'></p>
-<hr>
-<p class='spacer'></p>
-<h3>🏆 <a href="https://tw.stock.yahoo.com/quote/6770.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">6770 力積電</a>｜總分91｜強力買進</h3>
-<p class='spacer'></p>
-<p><strong>目前價位：74.2元</strong></p>
-<p class='spacer'></p>
-<p><strong>結論：買</strong></p>
-<p class='spacer'></p>
-<p><strong>進場區：72.0～75.5元</strong></p>
-<p><strong>目標價：91元（對應PE河流次高軌道）</strong></p>
-<p><strong>停損：68元（跌破MA60 62.75支撐帶+緩衝）</strong></p>
-<p class='spacer'></p>
-<p><strong>籌碼動態判斷：</strong></p>
-<p>這股籌碼面很特別，要仔細看。外資近10日累計<strong>賣超超過21萬張</strong>，但6/18單日轉為買超14672張，外資持股變化卻是+1.87%——這說明前段大賣是外資在GDS發行完成後的籌碼重分配，新錢已經進來了。美林證券買超19327張是關鍵，這不是散戶行為，是機構在吃。投信也同步買進1746張。RSI 80.63雖偏高，但半導體股強勢鈍化很正常。⚠️（RSI&gt;80非必然賣訊，需確認趨勢行情，本股屬趨勢行情）</p>
-<p class='spacer'></p>
-<p>基本面亮點：Q1 EPS 3.36，年增率1392%，不是打錯字，是真的暴衝。GDS籌資8.86億美元擴設備，有實質資金到位。5月營收年增58.86%，月增14.36%，趨勢明確向上。</p>
-<p class='spacer'></p>
-<p>唯一風險：融資5日增加16452張，散戶在追，短線可能有洗籌碼動作。</p>
-<p class='spacer'></p>
-<p><strong>如果是我的錢，我會買，原因是外資GDS發行後籌碼重分配完成、美林機構大單介入、基本面EPS暴增是真實的，這種組合不常見。</strong></p>
-<p class='spacer'></p>
-<hr>
-<p class='spacer'></p>
-<h3>🥈 <a href="https://tw.stock.yahoo.com/quote/1216.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">1216 統一超</a>｜總分83｜強力買進</h3>
-<p class='spacer'></p>
-<p><strong>目前價位：74.5元</strong></p>
-<p class='spacer'></p>
-<p><strong>結論：買</strong></p>
-<p class='spacer'></p>
-<p><strong>進場區：72.5～75元（接近月線季線支撐）</strong></p>
-<p><strong>目標價：82元（對應PE河流中低軌道約79.9元上方）</strong></p>
-<p><strong>停損：70元（跌破MA60）</strong></p>
-<p class='spacer'></p>
-<p><strong>籌碼動態判斷：</strong></p>
-<p>外資近10日雖累計買超6208張，但6/18單日賣超11887張、投信單日卻買超8259張，這個訊號很明確——<strong>外資在調節，投信積極接手</strong>。投信近10日累計8377張，且6/18那天大量買進是確認性動作。富邦買超9041張是主力大單，凱基台北買超1019張，這不是洗盤，是換手給偏長線的機構。</p>
-<p class='spacer'></p>
-<p>基本面：Q1 EPS 1.15，年增26.37%，毛利率33.8%算穩健，5月營收年增2.7%持續正成長。連續5年現金股利3元上下，殖利率約4%有保護。⚠️（流動比率0.88&lt;1，這在零售業因為預付供應商款項模式算正常，不代表財務危機，但需留意）</p>
-<p class='spacer'></p>
-<p><strong>如果是我的錢，我會買，原因是投信大量接手外資籌碼、基本面穩健成長、防禦型食品股在多頭行情中有好的風險報酬比。</strong></p>
-<p class='spacer'></p>
-<hr>
-<p class='spacer'></p>
-<h3>🥉 <a href="https://tw.stock.yahoo.com/quote/2845.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">2845 遠東商銀</a>｜總分81｜強力買進</h3>
-<p class='spacer'></p>
-<p><strong>目前價位：12.95元</strong></p>
+<hr></div>
+    </div>
+
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">🥈</span>
+        <a href="https://tw.stock.yahoo.com/quote/6770.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">6770</span>
+          <span class="ai-card-name">力積電</span>
+        </a>
+        <span class="ai-card-verdict vc-strong">強力買進</span>
+      </div>
+      
+    <div class="price-range-box">
+      <div class="price-range-title">價格區間</div>
+      <div class="price-range-bar-wrap">
+        <div class="price-range-track"></div>
+        <div class="price-range-zone" style="left:17.4%;width:15.2%"></div>
+        <div class="price-range-stop"   style="left:0%"></div>
+        <div class="price-range-target" style="left:98%"></div>
+        <div class="price-range-label" style="left:0%;color:var(--red)">68.0</div>
+        <div class="price-range-label" style="left:98%;color:var(--green)">91.0</div>
+        <div class="price-range-current" style="left:27.0%"></div><div class="price-range-label" style="left:27.0%;color:#1a6080;top:0">74.2</div>
+      </div>
+      
+    <div class="price-pills">
+      <div class="pill pill-stop"><div class="pill-label">停損</div><div class="pill-val">68.0</div></div>
+      <div class="pill pill-entry"><div class="pill-label">進場區</div><div class="pill-val">72.0～75.5</div></div>
+      <div class="pill pill-price"><div class="pill-label">現價</div><div class="pill-val">74.2</div></div>
+      <div class="pill pill-target"><div class="pill-label">目標</div><div class="pill-val">91.0</div></div>
+    </div>
+    </div>
+      <div class="ai-card-body"><p class='spacer'></p>
 <p class='spacer'></p>
 <p><strong>結論：買</strong></p>
 <p class='spacer'></p>
-<p><strong>進場區：12.4～13.0元</strong></p>
-<p><strong>目標價：14.5元（對應PE河流最高軌道16.44元為最終目標，近期先看14.5）</strong></p>
-<p><strong>停損：11.8元（跌破MA20/MA60支撐帶）</strong></p>
 <p class='spacer'></p>
 <p><strong>籌碼動態判斷：</strong></p>
-<p>外資近10日累計買超39389張，持股從8.85%升至9.85%，是真正的加碼行為。6/18雖單日賣超9411張，但投信同日大買4161張，前幾日外資+投信聯手拉抬的格局很清晰。KD 80.36/83.17雖在高檔，但金融股週期性強，均量放大1.36倍確認有資金進駐。⚠️（KD&gt;80非必然賣訊，金融股常見高檔鈍化）</p>
+<p>這股籌碼面很特別，要仔細看。<mark class="kw kw-fii">外資</mark>近10日累計<strong>賣超超過<mark class="kw kw-num">21萬張</mark></strong>，但6/18單日轉為買超<mark class="kw kw-num">14672張</mark>，<mark class="kw kw-fii">外資</mark>持股變化卻是+<mark class="kw kw-num">1.87%</mark>——這說明前段大賣是<mark class="kw kw-fii">外資</mark>在GDS發行完成後的籌碼重分配，新錢已經進來了。美林證券買超<mark class="kw kw-num">19327張</mark>是關鍵，這不是散戶行為，是機構在吃。<mark class="kw kw-itf">投信</mark>也同步<mark class="kw kw-buy">買進</mark><mark class="kw kw-num">1746張</mark>。RSI 80.63雖偏高，但半導體股強勢鈍化很正常。⚠️（RSI&gt;80非必然賣訊，需確認趨勢行情，本股屬趨勢行情）</p>
 <p class='spacer'></p>
-<p>基本面：⚠️（金融股ROE門檻應用8-12%，非一般產業15%標準）5月營收年增21.68%，這對銀行業是很亮眼的數字。負債比92%是金融業正常水準，流動比率在金融股不適用一般標準。</p>
+<p>基本面亮點：Q1 EPS 3.36，年增率<mark class="kw kw-num">1392%</mark>，不是打錯字，是真的暴衝。GDS籌資8.86億美元擴設備，有實質資金到位。5月營收年增<mark class="kw kw-num">58.86%</mark>，月增<mark class="kw kw-num">14.36%</mark>，趨勢明確向上。</p>
 <p class='spacer'></p>
-<p><strong>如果是我的錢，我會買，原因是外資連續10日淨加碼近4萬張是真實吃貨行為、銀行股評估本益比12.66倍仍低於河流中低軌道、5月自結數字強勁。</strong></p>
+<p>唯一風險：<mark class="kw kw-margin">融資</mark>5日增加<mark class="kw kw-num">16452張</mark>，散戶在追，短線可能有洗籌碼動作。</p>
 <p class='spacer'></p>
-<hr>
+<p><strong>如果是我的錢，我會買，原因是<mark class="kw kw-fii">外資</mark>GDS發行後籌碼重分配完成、美林機構大單介入、基本面EPS暴增是真實的，這種組合不常見。</strong></p>
 <p class='spacer'></p>
-<h3><a href="https://tw.stock.yahoo.com/quote/2542.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">2542 興富發</a>｜總分80｜強力買進</h3>
+<hr></div>
+    </div>
+
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">🥉</span>
+        <a href="https://tw.stock.yahoo.com/quote/1216.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">1216</span>
+          <span class="ai-card-name">統一超</span>
+        </a>
+        <span class="ai-card-verdict vc-strong">強力買進</span>
+      </div>
+      
+    <div class="price-range-box">
+      <div class="price-range-title">價格區間</div>
+      <div class="price-range-bar-wrap">
+        <div class="price-range-track"></div>
+        <div class="price-range-zone" style="left:20.8%;width:20.8%"></div>
+        <div class="price-range-stop"   style="left:0%"></div>
+        <div class="price-range-target" style="left:98%"></div>
+        <div class="price-range-label" style="left:0%;color:var(--red)">70.0</div>
+        <div class="price-range-label" style="left:98%;color:var(--green)">82.0</div>
+        <div class="price-range-current" style="left:37.5%"></div><div class="price-range-label" style="left:37.5%;color:#1a6080;top:0">74.5</div>
+      </div>
+      
+    <div class="price-pills">
+      <div class="pill pill-stop"><div class="pill-label">停損</div><div class="pill-val">70.0</div></div>
+      <div class="pill pill-entry"><div class="pill-label">進場區</div><div class="pill-val">72.5～75.0</div></div>
+      <div class="pill pill-price"><div class="pill-label">現價</div><div class="pill-val">74.5</div></div>
+      <div class="pill pill-target"><div class="pill-label">目標</div><div class="pill-val">82.0</div></div>
+    </div>
+    </div>
+      <div class="ai-card-body"><p class='spacer'></p>
 <p class='spacer'></p>
-<p><strong>目前價位：44.75元</strong></p>
+<p><strong>結論：買</strong></p>
+<p class='spacer'></p>
+<p class='spacer'></p>
+<p><strong>籌碼動態判斷：</strong></p>
+<p><mark class="kw kw-fii">外資</mark>近10日雖累計買超<mark class="kw kw-num">6208張</mark>，但6/18單日賣超<mark class="kw kw-num">11887張</mark>、<mark class="kw kw-itf">投信</mark>單日卻買超<mark class="kw kw-num">8259張</mark>，這個訊號很明確——<strong><mark class="kw kw-fii">外資</mark>在調節，<mark class="kw kw-itf">投信</mark>積極接手</strong>。<mark class="kw kw-itf">投信</mark>近10日累計<mark class="kw kw-num">8377張</mark>，且6/18那天大量<mark class="kw kw-buy">買進</mark>是確認性動作。富邦買超<mark class="kw kw-num">9041張</mark>是主力大單，凱基台北買超<mark class="kw kw-num">1019張</mark>，這不是洗盤，是換手給偏長線的機構。</p>
+<p class='spacer'></p>
+<p>基本面：Q1 EPS 1.15，年增<mark class="kw kw-num">26.37%</mark>，毛利率<mark class="kw kw-num">33.8%</mark>算穩健，5月營收年增<mark class="kw kw-num">2.7%</mark>持續正成長。連續5年現金股利3元上下，殖利率約<mark class="kw kw-num">4%</mark>有保護。⚠️（流動比率0.88&lt;1，這在零售業因為預付供應商款項模式算正常，不代表財務危機，但需留意）</p>
+<p class='spacer'></p>
+<p><strong>如果是我的錢，我會買，原因是<mark class="kw kw-itf">投信</mark>大量接手<mark class="kw kw-fii">外資</mark>籌碼、基本面穩健成長、防禦型食品股在多頭行情中有好的風險報酬比。</strong></p>
+<p class='spacer'></p>
+<hr></div>
+    </div>
+
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">4️⃣</span>
+        <a href="https://tw.stock.yahoo.com/quote/2845.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">2845</span>
+          <span class="ai-card-name">遠東商銀</span>
+        </a>
+        <span class="ai-card-verdict vc-strong">強力買進</span>
+      </div>
+      
+    <div class="price-range-box">
+      <div class="price-range-title">價格區間</div>
+      <div class="price-range-bar-wrap">
+        <div class="price-range-track"></div>
+        <div class="price-range-zone" style="left:22.2%;width:22.2%"></div>
+        <div class="price-range-stop"   style="left:0%"></div>
+        <div class="price-range-target" style="left:98%"></div>
+        <div class="price-range-label" style="left:0%;color:var(--red)">11.8</div>
+        <div class="price-range-label" style="left:98%;color:var(--green)">14.5</div>
+        <div class="price-range-current" style="left:42.6%"></div><div class="price-range-label" style="left:42.6%;color:#1a6080;top:0">12.95</div>
+      </div>
+      
+    <div class="price-pills">
+      <div class="pill pill-stop"><div class="pill-label">停損</div><div class="pill-val">11.8</div></div>
+      <div class="pill pill-entry"><div class="pill-label">進場區</div><div class="pill-val">12.4～13.0</div></div>
+      <div class="pill pill-price"><div class="pill-label">現價</div><div class="pill-val">12.95</div></div>
+      <div class="pill pill-target"><div class="pill-label">目標</div><div class="pill-val">14.5</div></div>
+    </div>
+    </div>
+      <div class="ai-card-body"><p class='spacer'></p>
+<p class='spacer'></p>
+<p><strong>結論：買</strong></p>
+<p class='spacer'></p>
+<p class='spacer'></p>
+<p><strong>籌碼動態判斷：</strong></p>
+<p><mark class="kw kw-fii">外資</mark>近10日累計買超<mark class="kw kw-num">39389張</mark>，持股從<mark class="kw kw-num">8.85%</mark>升至<mark class="kw kw-num">9.85%</mark>，是真正的加碼行為。6/18雖單日賣超<mark class="kw kw-num">9411張</mark>，但<mark class="kw kw-itf">投信</mark>同日大買<mark class="kw kw-num">4161張</mark>，前幾日<mark class="kw kw-fii">外資</mark>+<mark class="kw kw-itf">投信</mark>聯手拉抬的格局很清晰。KD 80.36/83.17雖在高檔，但金融股週期性強，均量放大1.36倍確認有資金進駐。⚠️（KD&gt;80非必然賣訊，金融股常見高檔鈍化）</p>
+<p class='spacer'></p>
+<p>基本面：⚠️（金融股ROE門檻應用8-<mark class="kw kw-num">12%</mark>，非一般產業<mark class="kw kw-num">15%</mark>標準）5月營收年增<mark class="kw kw-num">21.68%</mark>，這對銀行業是很亮眼的數字。負債比<mark class="kw kw-num">92%</mark>是金融業正常水準，流動比率在金融股不適用一般標準。</p>
+<p class='spacer'></p>
+<p><strong>如果是我的錢，我會買，原因是<mark class="kw kw-fii">外資</mark>連續10日淨加碼近<mark class="kw kw-num">4萬張</mark>是真實吃貨行為、銀行股評估本益比12.66倍仍低於河流中低軌道、5月自結數字強勁。</strong></p>
+<p class='spacer'></p>
+<hr></div>
+    </div>
+
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">5️⃣</span>
+        <a href="https://tw.stock.yahoo.com/quote/2542.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">2542</span>
+          <span class="ai-card-name">興富發</span>
+        </a>
+        <span class="ai-card-verdict vc-strong">強力買進</span>
+      </div>
+      
+    <div class="price-range-box">
+      <div class="price-range-title">價格區間</div>
+      <div class="price-range-bar-wrap">
+        <div class="price-range-track"></div>
+        <div class="price-range-zone" style="left:18.2%;width:22.7%"></div>
+        <div class="price-range-stop"   style="left:0%"></div>
+        <div class="price-range-target" style="left:98%"></div>
+        <div class="price-range-label" style="left:0%;color:var(--red)">41.0</div>
+        <div class="price-range-label" style="left:98%;color:var(--green)">52.0</div>
+        <div class="price-range-current" style="left:34.1%"></div><div class="price-range-label" style="left:34.1%;color:#1a6080;top:0">44.75</div>
+      </div>
+      
+    <div class="price-pills">
+      <div class="pill pill-stop"><div class="pill-label">停損</div><div class="pill-val">41.0</div></div>
+      <div class="pill pill-entry"><div class="pill-label">進場區</div><div class="pill-val">43.0～45.5</div></div>
+      <div class="pill pill-price"><div class="pill-label">現價</div><div class="pill-val">44.75</div></div>
+      <div class="pill pill-target"><div class="pill-label">目標</div><div class="pill-val">52.0</div></div>
+    </div>
+    </div>
+      <div class="ai-card-body"><p class='spacer'></p>
 <p class='spacer'></p>
 <p><strong>結論：買（但倉位控制）</strong></p>
 <p class='spacer'></p>
-<p><strong>進場區：43.0～45.5元（月線附近）</strong></p>
-<p><strong>目標價：52元</strong></p>
-<p><strong>停損：41元（跌破MA20整理帶）</strong></p>
 <p class='spacer'></p>
 <p><strong>籌碼動態判斷：</strong></p>
-<p>這股有趣的地方是<strong>外資近10日累計賣超27152張，投信卻大買48698張</strong>，明顯的法人換手——外資清出，投信積極布局。近期6/8~6/11投信連續三天各買約9000張以上，力道驚人，這是投信在作帳或真實看好的行為。股價在這段期間穩步上漲，說明投信的買盤有在撐。</p>
+<p>這股有趣的地方是<strong><mark class="kw kw-fii">外資</mark>近10日累計賣超<mark class="kw kw-num">27152張</mark>，<mark class="kw kw-itf">投信</mark>卻大買<mark class="kw kw-num">48698張</mark></strong>，明顯的法人換手——<mark class="kw kw-fii">外資</mark>清出，<mark class="kw kw-itf">投信</mark>積極布局。近期6/8~6/11<mark class="kw kw-itf">投信</mark>連續三天各買約<mark class="kw kw-num">9000張</mark>以上，力道驚人，這是<mark class="kw kw-itf">投信</mark>在作帳或真實看好的行為。股價在這段期間穩步上漲，說明<mark class="kw kw-itf">投信</mark>的買盤有在撐。</p>
 <p class='spacer'></p>
-<p>基本面：Q1 EPS 1.15，毛利率30.1%、營業利益率24.2%，對建商來說這數字很漂亮。5月營收年增2114%雖然是低基期因素，但Q1實質獲利是真實的。負債75.4%對建商算合理。</p>
+<p>基本面：Q1 EPS 1.15，毛利率<mark class="kw kw-num">30.1%</mark>、營業利益率<mark class="kw kw-num">24.2%</mark>，對建商來說這數字很漂亮。5月營收年增<mark class="kw kw-num">2114%</mark>雖然是低基期因素，但Q1實質獲利是真實的。負債<mark class="kw kw-num">75.4%</mark>對建商算合理。</p>
 <p class='spacer'></p>
 <p>新聞面有點小雜音：新董事長換人、股東會完成，短期不確定性消化後反而是進場時機。</p>
 <p class='spacer'></p>
-<p><strong>如果是我的錢，我會買一半倉位，原因是投信真實吃貨力道很猛，但外資在出，且房市前景看法分歧，等月線守穩再加碼。</strong></p>
+<p><strong>如果是我的錢，我會買一半倉位，原因是<mark class="kw kw-itf">投信</mark>真實吃貨力道很猛，但<mark class="kw kw-fii">外資</mark>在出，且房市前景看法分歧，等月線守穩再加碼。</strong></p>
 <p class='spacer'></p>
-<hr>
+<hr></div>
+    </div>
+
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">6️⃣</span>
+        <a href="https://tw.stock.yahoo.com/quote/4904.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">4904</span>
+          <span class="ai-card-name">遠傳電信</span>
+        </a>
+        <span class="ai-card-verdict vc-buy">買進</span>
+      </div>
+      
+    <div class="price-range-box">
+      <div class="price-range-title">價格區間</div>
+      <div class="price-range-bar-wrap">
+        <div class="price-range-track"></div>
+        <div class="price-range-zone" style="left:25.0%;width:25.0%"></div>
+        <div class="price-range-stop"   style="left:0%"></div>
+        <div class="price-range-target" style="left:98%"></div>
+        <div class="price-range-label" style="left:0%;color:var(--red)">98.0</div>
+        <div class="price-range-label" style="left:98%;color:var(--green)">118.0</div>
+        <div class="price-range-current" style="left:52.5%"></div><div class="price-range-label" style="left:52.5%;color:#1a6080;top:0">108.5</div>
+      </div>
+      
+    <div class="price-pills">
+      <div class="pill pill-stop"><div class="pill-label">停損</div><div class="pill-val">98.0</div></div>
+      <div class="pill pill-entry"><div class="pill-label">進場區</div><div class="pill-val">103.0～108.0</div></div>
+      <div class="pill pill-price"><div class="pill-label">現價</div><div class="pill-val">108.5</div></div>
+      <div class="pill pill-target"><div class="pill-label">目標</div><div class="pill-val">118.0</div></div>
+    </div>
+    </div>
+      <div class="ai-card-body"><p class='spacer'></p>
 <p class='spacer'></p>
-<h3><a href="https://tw.stock.yahoo.com/quote/4904.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">4904 遠傳電信</a>｜總分72｜買進</h3>
+<p><strong>結論：<mark class="kw kw-sell">觀望</mark>為主，小倉位可試</strong></p>
 <p class='spacer'></p>
-<p><strong>目前價位：108.5元</strong></p>
-<p class='spacer'></p>
-<p><strong>結論：觀望為主，小倉位可試</strong></p>
-<p class='spacer'></p>
-<p><strong>進場區：103～108元（回測月線附近再買）</strong></p>
-<p><strong>目標價：118元（對應PE河流最高軌道）</strong></p>
-<p><strong>停損：98元（跌破MA60）</strong></p>
 <p class='spacer'></p>
 <p><strong>籌碼動態判斷：</strong></p>
-<p>6/18出現很詭異的現象：<strong>外資賣超24677張，投信買超23501張</strong>，幾乎是對倒的態勢。這是法人換手還是主力洗盤？考量到富邦單一券商買超29339張，加上外資近10日整體僅賣超6128張，我判斷這更像是外資短線調節、投信搭配拉高的配合動作。</p>
+<p>6/18出現很詭異的現象：<strong><mark class="kw kw-fii">外資</mark>賣超<mark class="kw kw-num">24677張</mark>，<mark class="kw kw-itf">投信</mark>買超<mark class="kw kw-num">23501張</mark></strong>，幾乎是對倒的態勢。這是法人換手還是主力洗盤？考量到富邦單一券商買超<mark class="kw kw-num">29339張</mark>，加上<mark class="kw kw-fii">外資</mark>近10日整體僅賣超<mark class="kw kw-num">6128張</mark>，我判斷這更像是<mark class="kw kw-fii">外資</mark>短線調節、<mark class="kw kw-itf">投信</mark>搭配拉高的配合動作。</p>
 <p class='spacer'></p>
-<p>但問題是：乖離率20日已達6.53%，短線追高風險偏高，最好等回測月線101-103附近再入場。</p>
+<p>但問題是：乖離率20日已達<mark class="kw kw-num">6.53%</mark>，短線追高風險偏高，最好等回測月線101-103附近再入場。</p>
 <p class='spacer'></p>
-<p>基本面：EPS年增14.44%，毛利率33%，配息穩定（3.8元），是典型的防禦型現金流股。</p>
+<p>基本面：EPS年增<mark class="kw kw-num">14.44%</mark>，毛利率<mark class="kw kw-num">33%</mark>，配息穩定（3.8元），是典型的防禦型現金流股。</p>
 <p class='spacer'></p>
-<p><strong>如果是我的錢，我不會現在追，原因是乖離太大、外資投信對倒訊號不明確，等回測月線再說比較安全。</strong></p>
+<p><strong>如果是我的錢，我不會現在追，原因是乖離太大、<mark class="kw kw-fii">外資</mark><mark class="kw kw-itf">投信</mark>對倒訊號不明確，等回測月線再說比較安全。</strong></p>
 <p class='spacer'></p>
-<hr>
+<hr></div>
+    </div>
+
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">7️⃣</span>
+        <a href="https://tw.stock.yahoo.com/quote/1101.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">1101</span>
+          <span class="ai-card-name">台泥</span>
+        </a>
+        <span class="ai-card-verdict vc-buy">買進</span>
+      </div>
+      
+    <div class="price-range-box">
+      <div class="price-range-title">價格區間</div>
+      <div class="price-range-bar-wrap">
+        <div class="price-range-track"></div>
+        <div class="price-range-zone" style="left:9.1%;width:18.2%"></div>
+        <div class="price-range-stop"   style="left:0%"></div>
+        <div class="price-range-target" style="left:98%"></div>
+        <div class="price-range-label" style="left:0%;color:var(--red)">22.5</div>
+        <div class="price-range-label" style="left:98%;color:var(--green)">28.0</div>
+        <div class="price-range-current" style="left:36.4%"></div><div class="price-range-label" style="left:36.4%;color:#1a6080;top:0">24.5</div>
+      </div>
+      
+    <div class="price-pills">
+      <div class="pill pill-stop"><div class="pill-label">停損</div><div class="pill-val">22.5</div></div>
+      <div class="pill pill-entry"><div class="pill-label">進場區</div><div class="pill-val">23.0～24.0</div></div>
+      <div class="pill pill-price"><div class="pill-label">現價</div><div class="pill-val">24.5</div></div>
+      <div class="pill pill-target"><div class="pill-label">目標</div><div class="pill-val">28.0</div></div>
+    </div>
+    </div>
+      <div class="ai-card-body"><p class='spacer'></p>
 <p class='spacer'></p>
-<h3><a href="https://tw.stock.yahoo.com/quote/1101.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">1101 台泥</a>｜總分65｜買進（謹慎）</h3>
+<p><strong>結論：<mark class="kw kw-sell">觀望</mark></strong></p>
 <p class='spacer'></p>
-<p><strong>目前價位：24.5元</strong></p>
-<p class='spacer'></p>
-<p><strong>結論：觀望</strong></p>
-<p class='spacer'></p>
-<p><strong>進場區：23.0～24.0元</strong></p>
-<p><strong>目標價：28元</strong></p>
-<p><strong>停損：22.5元</strong></p>
 <p class='spacer'></p>
 <p><strong>籌碼動態判斷：</strong></p>
-<p>外資近10日賣超64175張，連三天賣超，這是清倉還是調節？外資持股從14.87%降至14.36%，下降趨勢明確。投信雖連買2天但量很小（52張、59張），支撐力道微弱。股價卻在外資賣超下還小漲，靠的是散戶融資在撐（5日增695張）——這種組合很不健康。</p>
+<p><mark class="kw kw-fii">外資</mark>近10日賣超<mark class="kw kw-num">64175張</mark>，連三天賣超，這是清倉還是調節？<mark class="kw kw-fii">外資</mark>持股從<mark class="kw kw-num">14.87%</mark>降至<mark class="kw kw-num">14.36%</mark>，下降趨勢明確。<mark class="kw kw-itf">投信</mark>雖連買2天但量很小（<mark class="kw kw-num">52張</mark>、<mark class="kw kw-num">59張</mark>），支撐力道微弱。股價卻在<mark class="kw kw-fii">外資</mark>賣超下還小漲，靠的是散戶<mark class="kw kw-margin">融資</mark>在撐（5日增<mark class="kw kw-num">695張</mark>）——這種組合很不健康。</p>
 <p class='spacer'></p>
-<p>基本面：近四季EPS -1.58元，累積虧損還沒回正，Q1單季雖轉盈0.1元但力道薄弱。歐洲能源子公司NHOA仍是黑洞。5月營收幾乎持平（年增-0.06%）。</p>
+<p>基本面：近四季EPS -1.58元，累積虧損還沒回正，Q1單季雖轉盈0.1元但力道薄弱。歐洲能源子公司NHOA仍是黑洞。5月營收幾乎持平（年增-<mark class="kw kw-num">0.06%</mark>）。</p>
 <p class='spacer'></p>
-<p><strong>如果是我的錢，我不會買，原因是外資連續大賣、基本面近四季仍虧損、NHOA能源事業不確定性未解除，這時進場像是接刀。</strong></p>
+<p><strong>如果是我的錢，我不會買，原因是<mark class="kw kw-fii">外資</mark>連續大賣、基本面近四季仍虧損、NHOA能源事業不確定性未解除，這時進場像是接刀。</strong></p>
 <p class='spacer'></p>
 <hr>
 <p class='spacer'></p>
 <h2>❌ 跳過不分析（不值得買）</h2>
 <p class='spacer'></p>
-<ul><li><strong><a href="https://tw.stock.yahoo.com/quote/2489.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">2489 瑞軒</a></strong>：RSI 94.55，融資35%偏高，Q1 EPS年減53%，基本面惡化，漲幅已大，碰了就是接最後一棒。</li>
-<li><strong><a href="https://tw.stock.yahoo.com/quote/3042.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">3042 晶技</a></strong>：外資+投信雙賣，融資26.5%偏高且大幅減少是散戶在出，MACD死叉，外資近10日累計小幅賣超，現在進場沒有勝算。</li>
-<li><strong><a href="https://tw.stock.yahoo.com/quote/6116.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">6116 瀚宇博</a></strong>：Q1虧損、毛利率-0.9%、外資6/18單日賣超79726張是恐怖數字，財報基本面爛透，純粹是遊資炒作面板概念，沒有基本面支撐，碰了是賭博。</li>
-<li><strong><a href="https://tw.stock.yahoo.com/quote/6207.TWO/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">6207 雷科</a></strong>：乖離月線高達29.54%，融資44.45%極高，Q1 EPS年減82%，這股已經飆完了，追進去是送錢。</li>
+<ul><li><strong><a href="https://tw.stock.yahoo.com/quote/2489.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">2489 瑞軒</a></strong>：RSI 94.55，<mark class="kw kw-margin">融資</mark><mark class="kw kw-num">35%</mark>偏高，Q1 EPS年減<mark class="kw kw-num">53%</mark>，基本面惡化，漲幅已大，碰了就是接最後一棒。</li>
+<li><strong><a href="https://tw.stock.yahoo.com/quote/3042.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">3042 晶技</a></strong>：<mark class="kw kw-fii">外資</mark>+<mark class="kw kw-itf">投信</mark>雙賣，<mark class="kw kw-margin">融資</mark><mark class="kw kw-num">26.5%</mark>偏高且大幅減少是散戶在出，MACD死叉，<mark class="kw kw-fii">外資</mark>近10日累計小幅賣超，現在進場沒有勝算。</li>
+<li><strong><a href="https://tw.stock.yahoo.com/quote/6116.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">6116 瀚宇博</a></strong>：Q1虧損、毛利率-<mark class="kw kw-num">0.9%</mark>、<mark class="kw kw-fii">外資</mark>6/18單日賣超<mark class="kw kw-num">79726張</mark>是恐怖數字，財報基本面爛透，純粹是遊資炒作面板概念，沒有基本面支撐，碰了是賭博。</li>
+<li><strong><a href="https://tw.stock.yahoo.com/quote/6207.TWO/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">6207 雷科</a></strong>：乖離月線高達<mark class="kw kw-num">29.54%</mark>，<mark class="kw kw-margin">融資</mark><mark class="kw kw-num">44.45%</mark>極高，Q1 EPS年減<mark class="kw kw-num">82%</mark>，這股已經飆完了，追進去是送錢。</li>
 </ul><p class='spacer'></p>
 <hr>
 <p class='spacer'></p>
@@ -647,7 +600,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-t
 <p class='spacer'></p>
 <p>理由很簡單：<strong>這是唯一一檔籌碼面和基本面同時出現質變的標的。</strong></p>
 <p class='spacer'></p>
-<p>GDS發行完成後，外資籌碼重分配收尾，美林機構19327張大單是明確的機構入場訊號。Q1 EPS 3.36元年增1392%不是帳面數字——是實質晶圓代工訂單爆單的結果。5月營收年增58.86%動能還在。以PE河流看，目前74.2元對應次高軌道74.55元剛好在合理上緣，有推升空間。</p>
+<p>GDS發行完成後，<mark class="kw kw-fii">外資</mark>籌碼重分配收尾，美林機構<mark class="kw kw-num">19327張</mark>大單是明確的機構入場訊號。Q1 EPS 3.36元年增<mark class="kw kw-num">1392%</mark>不是帳面數字——是實質晶圓代工訂單爆單的結果。5月營收年增<mark class="kw kw-num">58.86%</mark>動能還在。以PE河流看，目前74.2元對應次高軌道74.55元剛好在合理上緣，有推升空間。</p>
 <p class='spacer'></p>
 <p>技術面股價緊貼MA20（74.16），乖離幾乎為零，代表整理完畢，明天如果量能配合放大就是標準突破進場點。</p>
 <p class='spacer'></p>
@@ -658,8 +611,8 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-t
 <p>Output: 3,487 tokens</p>
 <p>本次費用: $0.<a href="https://tw.stock.yahoo.com/quote/1275.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">1275</a>USD</p>
 <p>累計費用: $1.<a href="https://tw.stock.yahoo.com/quote/1279.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">1279</a>USD</p>
-<p>餘額請至 console.anthropic.com 查看</p>
-  </div>
+<p>餘額請至 console.anthropic.com 查看</p></div>
+    </div>
 
 </div>
 
@@ -668,94 +621,127 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-t
 
   <div class="stitle">
     <span class="ico">💼</span>
-    <h2>持股評分總覽</h2>
-    <span class="tag">籌碼45% / 技術30% / 基本25%</span>
-  </div>
-
-  <!-- 評分排行卡片 -->
-  <div class="mine-cards">
-    <p class="muted">（無評分資料）</p>
-  </div>
-
-  <!-- 圖表 -->
-  <div class="chart-box" style="margin-top:24px">
-    <h3>三維評分分布</h3>
-    <div class="chart-row">
-      <div class="chart-wrap"><canvas id="chartMineTotal"></canvas></div>
-      <div class="chart-wrap"><canvas id="chartMineBreak"></canvas></div>
-    </div>
-  </div>
-
-  <!-- 分隔線 -->
-  <div class="sep">
-    <div class="sep-line"></div>
-    <div class="sep-label">🤖 AI 深度分析</div>
-    <div class="sep-line"></div>
-  </div>
-
-  <div class="stitle">
-    <span class="ico">💼</span>
     <h2>持股 AI 分析</h2>
-    <span class="tag">analyze_and_notify.py — MINE</span>
+    <span class="tag">真實持股 — 每支必析</span>
   </div>
-  <div class="ai-box">
-    <p>﻿# 台股選股後分析 2026/06/21_MINE</p>
-<p>3 隻選股，選上 2 隻</p>
+
+  
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">🥇</span>
+        <a href="https://tw.stock.yahoo.com/quote/2026.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">2026</span>
+          <span class="ai-card-name"></span>
+        </a>
+        <span class="ai-card-verdict vc-watch">觀望</span>
+      </div>
+      
+      <div class="ai-card-body"><p>3 隻選股，選上 2 隻</p>
 <p class='spacer'></p>
 <hr>
 <p class='spacer'></p>
-<h2>一、個股詳細分析</h2>
-<p class='spacer'></p>
-<h3>【<a href="https://tw.stock.yahoo.com/quote/2344.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">2344</a>】華邦電 ✅ 強力買進（持倉續抱）</h3>
-<p class='spacer'></p>
-<p><strong>目前價位：218.5元</strong></p>
+<h2>一、個股詳細分析</h2></div>
+    </div>
+
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">🥈</span>
+        <a href="https://tw.stock.yahoo.com/quote/2344.TW/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">2344</span>
+          <span class="ai-card-name">華邦電</span>
+        </a>
+        <span class="ai-card-verdict vc-strong">強力買進</span>
+      </div>
+      
+    <div class="price-range-box">
+      <div class="price-range-title">價格區間</div>
+      <div class="price-range-bar-wrap">
+        <div class="price-range-track"></div>
+        <div class="price-range-zone" style="left:16.7%;width:13.9%"></div>
+        <div class="price-range-stop"   style="left:0%"></div>
+        <div class="price-range-target" style="left:98%"></div>
+        <div class="price-range-label" style="left:0%;color:var(--red)">188.0</div>
+        <div class="price-range-label" style="left:98%;color:var(--green)">260.0</div>
+        <div class="price-range-current" style="left:42.4%"></div><div class="price-range-label" style="left:42.4%;color:#1a6080;top:0">218.5</div>
+      </div>
+      
+    <div class="price-pills">
+      <div class="pill pill-stop"><div class="pill-label">停損</div><div class="pill-val">188.0</div></div>
+      <div class="pill pill-entry"><div class="pill-label">進場區</div><div class="pill-val">200.0～210.0</div></div>
+      <div class="pill pill-price"><div class="pill-label">現價</div><div class="pill-val">218.5</div></div>
+      <div class="pill pill-target"><div class="pill-label">目標</div><div class="pill-val">260.0</div></div>
+    </div>
+    </div>
+      <div class="ai-card-body"><p class='spacer'></p>
 <p class='spacer'></p>
 <p><strong>結論：持倉續抱，有倉位的不要輕易跑，但新資金暫緩追高</strong></p>
 <p class='spacer'></p>
-<p><strong>進場區：200～210元</strong>（等回測月線或整理後再加碼）</p>
-<p><strong>目標價：260～280元</strong>（PE河流中低軌226元已突破，往中高軌333元推進，短期先看260）</p>
-<p><strong>停損價：188元</strong>（跌破MA20均線收盤即停損）</p>
 <p class='spacer'></p>
 <p><strong>籌碼動態判斷：</strong></p>
-<p>這檔籌碼面有點複雜，要仔細拆解。外資近10日累計買超3.9萬張，但最後兩天突然砍了將近2.8萬張——6/18單日外資賣出近2萬張，同時股價衝上9.8%漲停，這個訊號你要讀懂：<strong>外資在漲停板出貨</strong>，不是正常換手。投信這邊是好的，連續8天累計買超1.2萬張，態度比外資積極。融資5天暴增2.1萬張⚠️，散戶瘋狂追入，這是警訊，短線過熱。</p>
+<p>這檔籌碼面有點複雜，要仔細拆解。<mark class="kw kw-fii">外資</mark>近10日累計買超<mark class="kw kw-num">3.9萬張</mark>，但最後兩天突然砍了將近<mark class="kw kw-num">2.8萬張</mark>——6/18單日<mark class="kw kw-fii">外資</mark>賣出近<mark class="kw kw-num">2萬張</mark>，同時股價衝上<mark class="kw kw-num">9.8%</mark>漲停，這個訊號你要讀懂：<strong><mark class="kw kw-fii">外資</mark>在漲停板出貨</strong>，不是正常換手。<mark class="kw kw-itf">投信</mark>這邊是好的，連續8天累計買超<mark class="kw kw-num">1.2萬張</mark>，態度比<mark class="kw kw-fii">外資</mark>積極。<mark class="kw kw-margin">融資</mark>5天暴增<mark class="kw kw-num">2.1萬張</mark>⚠️，散戶瘋狂追入，這是警訊，短線過熱。</p>
 <p class='spacer'></p>
-<p>但抵銷這個壞訊號的是：消息面超強——打入輝達供應鏈、記憶體上升循環、擬擴大高雄廠，這種等級的題材是真實業績驅動，不是炒作。大單佔比99.9%、大單量31萬張，法人機構在玩，不是散戶在推。RSI 100滿值、乖離率月線高達31.84%，<strong>短線技術面嚴重超買，需要時間消化</strong>。</p>
+<p>但抵銷這個壞訊號的是：消息面超強——打入輝達供應鏈、記憶體上升循環、擬擴大高雄廠，這種等級的題材是真實業績驅動，不是炒作。大單佔比<mark class="kw kw-num">99.9%</mark>、大單量<mark class="kw kw-num">31萬張</mark>，法人機構在玩，不是散戶在推。RSI 100滿值、乖離率月線高達<mark class="kw kw-num">31.84%</mark>，<strong>短線技術面嚴重超買，需要時間消化</strong>。</p>
 <p class='spacer'></p>
-<p>⚠️ 融資近5日淨增21162張，散戶追買現象明顯，但股價趨勢向上，需要確認是否為強勢股持續性追買。結合漲停板外資出貨的動作，判斷<strong>短線有拉回整理需求</strong>。</p>
+<p>⚠️ <mark class="kw kw-margin">融資</mark>近5日淨增<mark class="kw kw-num">21162張</mark>，散戶追買現象明顯，但股價趨勢向上，需要確認是否為強勢股持續性追買。結合漲停板<mark class="kw kw-fii">外資</mark>出貨的動作，判斷<strong>短線有拉回整理需求</strong>。</p>
 <p class='spacer'></p>
-<p><strong>你手上有1000股、成本162.73、已獲利+26.64%，我的建議是：</strong></p>
-<ul><li>持倉不動，不要因為單日外資賣超就嚇跑</li>
+<p><strong>你手上有1000股、成本162.73、已獲利+<mark class="kw kw-num">26.64%</mark>，我的建議是：</strong></p>
+<ul><li>持倉不動，不要因為單日<mark class="kw kw-fii">外資</mark>賣超就嚇跑</li>
 <li>不加碼，等回測200～210元區間再說</li>
 <li>停損設在188元（跌破月線）</li>
 </ul><p class='spacer'></p>
-<p><strong>如果是我的錢，我會繼續持有但不追高，原因是題材是真的（打入輝達+記憶體循環）、投信連買8天不離場，但短線漲停板外資出貨加上融資暴增，需要等個2-3天讓籌碼沉澱再決定加碼。</strong></p>
+<p><strong>如果是我的錢，我會繼續持有但不追高，原因是題材是真的（打入輝達+記憶體循環）、<mark class="kw kw-itf">投信</mark>連買8天不離場，但短線漲停板<mark class="kw kw-fii">外資</mark>出貨加上<mark class="kw kw-margin">融資</mark>暴增，需要等個2-3天讓籌碼沉澱再決定加碼。</strong></p>
 <p class='spacer'></p>
-<hr>
-<p class='spacer'></p>
-<h3>【<a href="https://tw.stock.yahoo.com/quote/8069.TWO/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">8069</a>】元太 ✅ 買進（逢低布局）</h3>
-<p class='spacer'></p>
-<p><strong>目前價位：204元</strong></p>
+<hr></div>
+    </div>
+
+    <div class="ai-stock-card">
+      <div class="ai-card-header">
+        <span class="ai-card-rank">🥉</span>
+        <a href="https://tw.stock.yahoo.com/quote/8069.TWO/technical-analysis" target="_blank" style="color:inherit;text-decoration:none">
+          <span class="ai-card-code">8069</span>
+          <span class="ai-card-name">元太</span>
+        </a>
+        <span class="ai-card-verdict vc-buy">買進</span>
+      </div>
+      
+    <div class="price-range-box">
+      <div class="price-range-title">價格區間</div>
+      <div class="price-range-bar-wrap">
+        <div class="price-range-track"></div>
+        <div class="price-range-zone" style="left:15.4%;width:18.5%"></div>
+        <div class="price-range-stop"   style="left:0%"></div>
+        <div class="price-range-target" style="left:98%"></div>
+        <div class="price-range-label" style="left:0%;color:var(--red)">185.0</div>
+        <div class="price-range-label" style="left:98%;color:var(--green)">250.0</div>
+        <div class="price-range-current" style="left:29.2%"></div><div class="price-range-label" style="left:29.2%;color:#1a6080;top:0">204.0</div>
+      </div>
+      
+    <div class="price-pills">
+      <div class="pill pill-stop"><div class="pill-label">停損</div><div class="pill-val">185.0</div></div>
+      <div class="pill pill-entry"><div class="pill-label">進場區</div><div class="pill-val">195.0～207.0</div></div>
+      <div class="pill pill-price"><div class="pill-label">現價</div><div class="pill-val">204.0</div></div>
+      <div class="pill pill-target"><div class="pill-label">目標</div><div class="pill-val">250.0</div></div>
+    </div>
+    </div>
+      <div class="ai-card-body"><p class='spacer'></p>
 <p class='spacer'></p>
 <p><strong>結論：買，但你現在虧損中，策略是攤平還是停損要看清楚</strong></p>
 <p class='spacer'></p>
-<p><strong>進場區：195～207元</strong>（目前已在進場區，季線支撐有效）</p>
-<p><strong>目標價：250～280元</strong>（PE在次低軌206元附近，往中低軌280推進）</p>
-<p><strong>停損價：185元</strong>（跌破季線179元附近，給一點緩衝）</p>
 <p class='spacer'></p>
 <p><strong>籌碼動態判斷：</strong></p>
-<p>這檔籌碼面出現明顯分歧：<strong>外資連買3天累計5420張，但投信連賣3天、近10日累計賣超7215張</strong>——外資跟投信在對做！誰是對的？看主力券商：摩根士丹利買1643張、美林買1497張，都是外資系統，<strong>外資在低檔慢慢撿</strong>。投信近期賣壓是之前高檔布局的獲利了結，不代表公司基本面轉壞。</p>
+<p>這檔籌碼面出現明顯分歧：<strong><mark class="kw kw-fii">外資</mark>連買3天累計<mark class="kw kw-num">5420張</mark>，但<mark class="kw kw-itf">投信</mark>連賣3天、近10日累計賣超<mark class="kw kw-num">7215張</mark></strong>——<mark class="kw kw-fii">外資</mark>跟<mark class="kw kw-itf">投信</mark>在對做！誰是對的？看主力券商：摩根士丹利買<mark class="kw kw-num">1643張</mark>、美林買<mark class="kw kw-num">1497張</mark>，都是<mark class="kw kw-fii">外資</mark>系統，<strong><mark class="kw kw-fii">外資</mark>在低檔慢慢撿</strong>。<mark class="kw kw-itf">投信</mark>近期賣壓是之前高檔布局的獲利了結，不代表公司基本面轉壞。</p>
 <p class='spacer'></p>
-<p>基本面沒得說：毛利率59.7%、EPS年增26%、5月營收創近9個月新高、電子貨架標籤（ESL）需求持續旺、BMW車用合作項目剛曝光。融資使用率僅2.75%，幾乎沒有散戶融資壓力，籌碼乾淨。</p>
+<p>基本面沒得說：毛利率<mark class="kw kw-num">59.7%</mark>、EPS年增<mark class="kw kw-num">26%</mark>、5月營收創近9個月新高、電子貨架標籤（ESL）需求持續旺、BMW車用合作項目剛曝光。<mark class="kw kw-margin">融資</mark>使用率僅<mark class="kw kw-num">2.75%</mark>，幾乎沒有散戶<mark class="kw kw-margin">融資</mark>壓力，籌碼乾淨。</p>
 <p class='spacer'></p>
 <p>技術面：跌破月線（MA20=213.8），但站穩季線（MA60=179），MACD死叉但柱狀體縮小中，KD在低檔43/30，有轉折跡象。這種型態是<strong>回測整理而非崩跌</strong>。</p>
 <p class='spacer'></p>
-<p><strong>你手上9000股、成本235、虧損-13.16%，這是最要緊的問題：</strong></p>
+<p><strong>你手上9000股、成本235、虧損-<mark class="kw kw-num">13.16%</mark>，這是最要緊的問題：</strong></p>
 <ul><li>基本面沒有惡化，新應用持續擴大</li>
-<li>外資在你虧損時反而在買，這是好訊號</li>
+<li><mark class="kw kw-fii">外資</mark>在你虧損時反而在買，這是好訊號</li>
 <li>若能接受短期波動，<strong>可以考慮在195-205區間小量攤平</strong></li>
 <li>嚴格停損設185元，跌破就要認賠</li>
 </ul><p class='spacer'></p>
-<p><strong>如果是我的錢，我會在195-205元分兩批攤平降低成本，原因是電子紙這個賽道還在成長初期、外資現在進場的動作是真吃貨不是洗盤、估值在歷史低軌附近，下檔空間有限，但停損185元不能破。</strong></p>
+<p><strong>如果是我的錢，我會在195-205元分兩批攤平降低成本，原因是電子紙這個賽道還在成長初期、<mark class="kw kw-fii">外資</mark>現在進場的動作是真吃貨不是洗盤、估值在歷史低軌附近，下檔空間有限，但停損185元不能破。</strong></p>
 <p class='spacer'></p>
 <hr>
 <p class='spacer'></p>
@@ -763,9 +749,9 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-t
 <p class='spacer'></p>
 <p><strong>→ <a href="https://tw.stock.yahoo.com/quote/2344.TW/technical-analysis" target="_blank" style="color:var(--accent);font-weight:700">2344 華邦電</a></strong></p>
 <p class='spacer'></p>
-<p>原因很簡單：<strong>打入輝達供應鏈這個消息是台股最強的催化劑之一</strong>，記憶體景氣循環向上的大方向確立，投信連買8天態度比誰都積極，PE還在歷史中低軌附近（現在PE不到18倍，對照河流圖中低軌29倍還有大空間）。唯一要注意的是短線漲停後的換手整理，進場要有耐心等回測，別在漲停次日去追。</p>
+<p>原因很簡單：<strong>打入輝達供應鏈這個消息是台股最強的催化劑之一</strong>，記憶體景氣循環向上的大方向確立，<mark class="kw kw-itf">投信</mark>連買8天態度比誰都積極，PE還在歷史中低軌附近（現在PE不到18倍，對照河流圖中低軌29倍還有大空間）。唯一要注意的是短線漲停後的換手整理，進場要有耐心等回測，別在漲停次日去追。</p>
 <p class='spacer'></p>
-<p>3037欣興本次判斷為「觀望」——外資投信兩路都在賣，高盛近日大單賣超4934張，法人沒有共識，技術面跌破月線，目前不是進場時機，跳過不分析。</p>
+<p>3037欣興本次判斷為「<mark class="kw kw-sell">觀望</mark>」——<mark class="kw kw-fii">外資</mark><mark class="kw kw-itf">投信</mark>兩路都在賣，高盛近日大單賣超<mark class="kw kw-num">4934張</mark>，法人沒有共識，技術面跌破月線，目前不是進場時機，跳過不分析。</p>
 <p class='spacer'></p>
 <hr>
 <p class='spacer'></p>
@@ -774,12 +760,12 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-t
 <p>Output: 1,936 tokens</p>
 <p>本次費用: $0.0627 USD</p>
 <p>累計費用: $1.0004 USD</p>
-<p>餘額請至 console.anthropic.com 查看</p>
-  </div>
+<p>餘額請至 console.anthropic.com 查看</p></div>
+    </div>
 
 </div>
 
-<footer>自動生成於 2026-06-21 23:00 &nbsp;·&nbsp; 台股盤後自動選股系統</footer>
+<footer>自動生成於 2026-06-21 23:14 &nbsp;·&nbsp; 台股盤後自動選股系統</footer>
 </div><!-- /appContent -->
 
 <script>
@@ -822,88 +808,7 @@ function switchTab(idx){
   document.querySelectorAll('nav.tabs button').forEach((b,i)=>b.classList.toggle('active',i===idx));
 }
 
-// ── Chart.js ──
-const labels = ["1216 統一", "4904 遠傳", "6770 力積電", "6207 雷科", "6116 彩晶", "2489 瑞軒", "2845 遠東銀", "1101 台泥", "3042 晶技", "2542 興富發"];
-const scores = [35, 35, 25, 25, 25, 25, 20, 20, 20, 20];
-const dists  = [4.1, 4.4, 21.5, 3.2, 17.2, 16.6, 3.7, 3.5, 12.6, 5.0];
-
-const barColor  = scores.map(s => s>=35 ? 'rgba(184,98,26,.85)' : 'rgba(184,98,26,.40)');
-const distColor = dists.map(d  => d>=15 ? 'rgba(200,130,20,.85)' : d>=3 ? 'rgba(80,140,80,.75)' : 'rgba(170,170,170,.6)');
-
-const sharedOpts = {
-  responsive:true, maintainAspectRatio:false,
-  plugins:{ legend:{display:false}, tooltip:{callbacks:{
-    label: ctx => ' ' + ctx.formattedValue
-  }} },
-  scales:{
-    x:{ ticks:{font:{size:11}, color:'#9a7e55'}, grid:{display:false} },
-    y:{ ticks:{font:{size:11}, color:'#9a7e55'}, grid:{color:'rgba(200,160,80,.15)'} }
-  }
-};
-
-new Chart(document.getElementById('chartScore'),{
-  type:'bar',
-  data:{ labels, datasets:[{
-    label:'評分',data:scores,
-    backgroundColor:barColor,
-    borderRadius:6,borderSkipped:false,
-  }] },
-  options:{...sharedOpts, plugins:{...sharedOpts.plugins,
-    title:{display:true,text:'評分',color:'#b8621a',font:{size:13,weight:'700'}}
-  }, scales:{...sharedOpts.scales, y:{...sharedOpts.scales.y, max:100}}}
-});
-
-// ── 持股圖表 ──
-const mLabels = {};
-const mTotals = [];
-const mChips  = [];
-const mTechs  = [];
-const mFunds  = [];
-const mColors = [];
-
-if(document.getElementById('chartMineTotal') && mLabels.length){
-  new Chart(document.getElementById('chartMineTotal'),{
-    type:'bar',
-    data:{ labels:mLabels, datasets:[{
-      label:'總分',data:mTotals,
-      backgroundColor:mColors,borderRadius:6,borderSkipped:false
-    }] },
-    options:{...sharedOpts,
-      plugins:{...sharedOpts.plugins,
-        title:{display:true,text:'持股總分',color:'#b8621a',font:{size:13,weight:'700'}}
-      },
-      scales:{...sharedOpts.scales,y:{...sharedOpts.scales.y,max:100}}
-    }
-  });
-
-  new Chart(document.getElementById('chartMineBreak'),{
-    type:'bar',
-    data:{ labels:mLabels, datasets:[
-      {label:'籌碼(45%)',data:mChips,backgroundColor:'rgba(184,98,26,.80)',borderRadius:4,borderSkipped:false},
-      {label:'技術(30%)',data:mTechs,backgroundColor:'rgba(74,124,74,.80)',borderRadius:4,borderSkipped:false},
-      {label:'基本(25%)',data:mFunds,backgroundColor:'rgba(26,96,128,.75)',borderRadius:4,borderSkipped:false},
-    ] },
-    options:{...sharedOpts,
-      plugins:{...sharedOpts.plugins,
-        legend:{display:true,position:'top',labels:{font:{size:11},color:'#9a7e55',boxWidth:12}},
-        title:{display:true,text:'三維分解',color:'#b8621a',font:{size:13,weight:'700'}}
-      },
-      scales:{...sharedOpts.scales,y:{...sharedOpts.scales.y,max:100}}
-    }
-  });
-}
-
-new Chart(document.getElementById('chartDist'),{
-  type:'bar',
-  data:{ labels, datasets:[{
-    label:'距高點%',data:dists,
-    backgroundColor:distColor,
-    borderRadius:6,borderSkipped:false,
-  }] },
-  options:{...sharedOpts, plugins:{...sharedOpts.plugins,
-    title:{display:true,text:'距高點 %（橙=甜蜜點≥15%，綠=3~15%）',color:'#b8621a',font:{size:13,weight:'700'}}
-  }, scales:{...sharedOpts.scales, y:{...sharedOpts.scales.y, max:45}}}
-});
+// （Chart.js 已移除，圖表改為內嵌 CSS 價格區間條）
 </script>
 </body>
 </html>
