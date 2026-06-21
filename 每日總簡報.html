@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>每日總簡報 2026/06/21</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
 <style>
 :root{
   --bg:#fdf7ee;--card:#fffcf5;--card2:#fff8ec;
@@ -233,6 +233,10 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
 /* 如果是我的錢 */
 .my-money-quote{background:linear-gradient(135deg,#fef9f0,#fdf4e3);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;font-size:14px;font-weight:600;color:#5a3510;box-shadow:0 2px 8px rgba(180,100,20,.12)}
 
+/* 蠟燭圖 */
+.stock-chart-wrap{border-bottom:1px solid var(--border);background:#fffcf5}
+.stock-chart{width:100%;height:220px}
+
 /* AI card body */
 .ai-card-body{padding:18px 22px}
 .ai-card-body h3{font-size:14px;color:var(--accent);margin:18px 0 7px;font-weight:700;border-left:3px solid var(--accent);padding-left:9px}
@@ -309,6 +313,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         <span class="ai-card-verdict vc-watch">觀望</span>
       </div>
       
+      
       <div class="ai-card-body"><p>10 隻選股，選上 6 隻（強力買 3 隻，買 3 隻）</p>
 <p class='spacer'></p>
 <hr>
@@ -327,6 +332,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         </a>
         <span class="ai-card-verdict vc-strong">強力買進</span>
       </div>
+      <div class="stock-chart-wrap"><div id="chart-6770" class="stock-chart"></div></div>
       
     <div class="price-range-box">
       <div class="price-range-title">價格區間</div>
@@ -373,6 +379,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         </a>
         <span class="ai-card-verdict vc-strong">強力買進</span>
       </div>
+      <div class="stock-chart-wrap"><div id="chart-1216" class="stock-chart"></div></div>
       
     <div class="price-range-box">
       <div class="price-range-title">價格區間</div>
@@ -417,6 +424,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         </a>
         <span class="ai-card-verdict vc-strong">強力買進</span>
       </div>
+      <div class="stock-chart-wrap"><div id="chart-2845" class="stock-chart"></div></div>
       
     <div class="price-range-box">
       <div class="price-range-title">價格區間</div>
@@ -461,6 +469,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         </a>
         <span class="ai-card-verdict vc-strong">強力買進</span>
       </div>
+      <div class="stock-chart-wrap"><div id="chart-2542" class="stock-chart"></div></div>
       
     <div class="price-range-box">
       <div class="price-range-title">價格區間</div>
@@ -507,6 +516,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         </a>
         <span class="ai-card-verdict vc-buy">買進</span>
       </div>
+      <div class="stock-chart-wrap"><div id="chart-4904" class="stock-chart"></div></div>
       
     <div class="price-range-box">
       <div class="price-range-title">價格區間</div>
@@ -553,6 +563,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         </a>
         <span class="ai-card-verdict vc-buy">買進</span>
       </div>
+      <div class="stock-chart-wrap"><div id="chart-1101" class="stock-chart"></div></div>
       
     <div class="price-range-box">
       <div class="price-range-title">價格區間</div>
@@ -636,6 +647,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         <span class="ai-card-verdict vc-watch">觀望</span>
       </div>
       
+      
       <div class="ai-card-body"><p>3 隻選股，選上 2 隻</p>
 <p class='spacer'></p>
 <hr>
@@ -652,6 +664,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         </a>
         <span class="ai-card-verdict vc-strong">強力買進</span>
       </div>
+      <div class="stock-chart-wrap"><div id="chart-2344" class="stock-chart"></div></div>
       
     <div class="price-range-box">
       <div class="price-range-title">價格區間</div>
@@ -703,6 +716,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
         </a>
         <span class="ai-card-verdict vc-buy">買進</span>
       </div>
+      <div class="stock-chart-wrap"><div id="chart-8069" class="stock-chart"></div></div>
       
     <div class="price-range-box">
       <div class="price-range-title">價格區間</div>
@@ -765,7 +779,7 @@ mark.kw-warn{background:#fff3cd;color:#856404;border-radius:3px;padding:1px 5px}
 
 </div>
 
-<footer>自動生成於 2026-06-21 23:14 &nbsp;·&nbsp; 台股盤後自動選股系統</footer>
+<footer>自動生成於 2026-06-21 23:22 &nbsp;·&nbsp; 台股盤後自動選股系統</footer>
 </div><!-- /appContent -->
 
 <script>
@@ -808,7 +822,53 @@ function switchTab(idx){
   document.querySelectorAll('nav.tabs button').forEach((b,i)=>b.classList.toggle('active',i===idx));
 }
 
-// （Chart.js 已移除，圖表改為內嵌 CSS 價格區間條）
+// ── 蠟燭圖（lightweight-charts）──
+const ohlcvData = {"2344": [{"time": "2026-05-18", "open": 126.0, "high": 134.0, "low": 119.0, "close": 130.5}, {"time": "2026-05-19", "open": 125.0, "high": 127.0, "low": 117.5, "close": 117.5}, {"time": "2026-05-20", "open": 117.5, "high": 119.0, "low": 112.0, "close": 115.5}, {"time": "2026-05-21", "open": 120.0, "high": 122.5, "low": 113.5, "close": 114.0}, {"time": "2026-05-22", "open": 116.5, "high": 125.0, "low": 115.5, "close": 125.0}, {"time": "2026-05-25", "open": 120.5, "high": 133.0, "low": 119.0, "close": 128.5}, {"time": "2026-05-26", "open": 133.5, "high": 141.0, "low": 133.0, "close": 141.0}, {"time": "2026-05-27", "open": 155.0, "high": 155.0, "low": 146.0, "close": 155.0}, {"time": "2026-05-28", "open": 151.0, "high": 156.5, "low": 142.0, "close": 144.0}, {"time": "2026-05-29", "open": 155.0, "high": 158.0, "low": 151.0, "close": 158.0}, {"time": "2026-06-01", "open": 168.0, "high": 173.5, "low": 166.0, "close": 168.0}, {"time": "2026-06-02", "open": 174.0, "high": 184.5, "low": 171.5, "close": 184.5}, {"time": "2026-06-03", "open": 188.0, "high": 193.0, "low": 177.0, "close": 177.5}, {"time": "2026-06-04", "open": 175.0, "high": 188.0, "low": 175.0, "close": 179.5}, {"time": "2026-06-05", "open": 169.0, "high": 172.5, "low": 162.0, "close": 162.0}, {"time": "2026-06-08", "open": 146.0, "high": 157.0, "low": 146.0, "close": 154.0}, {"time": "2026-06-09", "open": 160.5, "high": 161.0, "low": 153.5, "close": 156.5}, {"time": "2026-06-10", "open": 152.0, "high": 163.5, "low": 148.0, "close": 149.0}, {"time": "2026-06-11", "open": 154.0, "high": 162.5, "low": 149.0, "close": 156.5}, {"time": "2026-06-12", "open": 169.5, "high": 172.0, "low": 166.0, "close": 172.0}, {"time": "2026-06-15", "open": 179.5, "high": 189.0, "low": 175.0, "close": 189.0}, {"time": "2026-06-16", "open": 198.5, "high": 201.0, "low": 191.5, "close": 197.0}, {"time": "2026-06-17", "open": 195.0, "high": 199.0, "low": 186.5, "close": 199.0}, {"time": "2026-06-18", "open": 203.5, "high": 218.5, "low": 201.5, "close": 218.5}], "1216": [{"time": "2026-05-18", "open": 76.2, "high": 76.4, "low": 74.1, "close": 74.7}, {"time": "2026-05-19", "open": 75.6, "high": 75.6, "low": 74.5, "close": 74.8}, {"time": "2026-05-20", "open": 74.8, "high": 74.8, "low": 72.7, "close": 73.4}, {"time": "2026-05-21", "open": 73.5, "high": 73.8, "low": 72.6, "close": 73.1}, {"time": "2026-05-22", "open": 72.8, "high": 72.9, "low": 71.4, "close": 71.5}, {"time": "2026-05-25", "open": 72.0, "high": 72.0, "low": 71.2, "close": 71.2}, {"time": "2026-05-26", "open": 71.3, "high": 71.9, "low": 70.8, "close": 70.8}, {"time": "2026-05-27", "open": 70.8, "high": 71.2, "low": 70.0, "close": 70.2}, {"time": "2026-05-28", "open": 70.8, "high": 71.5, "low": 70.4, "close": 70.8}, {"time": "2026-05-29", "open": 71.6, "high": 73.1, "low": 70.8, "close": 71.8}, {"time": "2026-06-01", "open": 72.1, "high": 74.3, "low": 72.1, "close": 73.7}, {"time": "2026-06-02", "open": 73.3, "high": 74.3, "low": 72.0, "close": 74.2}, {"time": "2026-06-03", "open": 74.5, "high": 74.5, "low": 72.9, "close": 73.3}, {"time": "2026-06-04", "open": 73.3, "high": 74.4, "low": 73.1, "close": 73.6}, {"time": "2026-06-05", "open": 73.5, "high": 74.3, "low": 73.5, "close": 73.8}, {"time": "2026-06-08", "open": 73.1, "high": 74.0, "low": 72.4, "close": 72.9}, {"time": "2026-06-09", "open": 73.0, "high": 75.0, "low": 73.0, "close": 74.1}, {"time": "2026-06-10", "open": 73.3, "high": 74.7, "low": 73.3, "close": 74.4}, {"time": "2026-06-11", "open": 74.4, "high": 75.6, "low": 74.4, "close": 75.6}, {"time": "2026-06-12", "open": 75.6, "high": 76.7, "low": 75.6, "close": 76.5}, {"time": "2026-06-15", "open": 77.6, "high": 77.7, "low": 75.6, "close": 76.3}, {"time": "2026-06-16", "open": 76.4, "high": 76.4, "low": 75.4, "close": 75.6}, {"time": "2026-06-17", "open": 75.6, "high": 76.0, "low": 74.7, "close": 76.0}, {"time": "2026-06-18", "open": 76.3, "high": 76.4, "low": 74.5, "close": 74.5}], "2542": [{"time": "2026-05-18", "open": 43.6, "high": 44.75, "low": 43.4, "close": 44.6}, {"time": "2026-05-19", "open": 44.6, "high": 44.8, "low": 43.6, "close": 43.7}, {"time": "2026-05-20", "open": 43.5, "high": 43.8, "low": 42.8, "close": 43.7}, {"time": "2026-05-21", "open": 43.95, "high": 44.4, "low": 43.6, "close": 43.65}, {"time": "2026-05-22", "open": 43.6, "high": 43.6, "low": 42.9, "close": 43.2}, {"time": "2026-05-25", "open": 43.05, "high": 43.1, "low": 42.1, "close": 42.4}, {"time": "2026-05-26", "open": 42.5, "high": 42.8, "low": 42.05, "close": 42.4}, {"time": "2026-05-27", "open": 42.15, "high": 43.4, "low": 42.1, "close": 43.1}, {"time": "2026-05-28", "open": 43.05, "high": 43.45, "low": 42.0, "close": 42.0}, {"time": "2026-05-29", "open": 42.3, "high": 42.35, "low": 41.6, "close": 41.95}, {"time": "2026-06-01", "open": 41.9, "high": 42.6, "low": 41.3, "close": 42.6}, {"time": "2026-06-02", "open": 42.5, "high": 43.25, "low": 42.25, "close": 42.45}, {"time": "2026-06-03", "open": 42.8, "high": 43.2, "low": 42.35, "close": 43.0}, {"time": "2026-06-04", "open": 43.05, "high": 43.6, "low": 42.85, "close": 43.1}, {"time": "2026-06-05", "open": 43.35, "high": 43.7, "low": 42.6, "close": 43.0}, {"time": "2026-06-08", "open": 41.3, "high": 42.45, "low": 41.2, "close": 41.9}, {"time": "2026-06-09", "open": 41.75, "high": 43.35, "low": 41.75, "close": 43.2}, {"time": "2026-06-10", "open": 43.2, "high": 46.1, "low": 42.65, "close": 45.45}, {"time": "2026-06-11", "open": 45.85, "high": 46.0, "low": 44.55, "close": 45.35}, {"time": "2026-06-12", "open": 45.85, "high": 47.1, "low": 44.9, "close": 44.95}, {"time": "2026-06-15", "open": 45.15, "high": 45.45, "low": 44.3, "close": 45.45}, {"time": "2026-06-16", "open": 45.45, "high": 45.85, "low": 44.9, "close": 45.05}, {"time": "2026-06-17", "open": 44.95, "high": 45.85, "low": 44.8, "close": 45.45}, {"time": "2026-06-18", "open": 45.65, "high": 47.0, "low": 44.75, "close": 44.75}], "8069": [{"time": "2026-05-18", "open": 213.0, "high": 220.0, "low": 207.5, "close": 219.0}, {"time": "2026-05-19", "open": 225.0, "high": 225.0, "low": 213.0, "close": 222.0}, {"time": "2026-05-20", "open": 222.5, "high": 230.0, "low": 218.5, "close": 230.0}, {"time": "2026-05-21", "open": 232.0, "high": 236.0, "low": 228.0, "close": 230.5}, {"time": "2026-05-22", "open": 228.5, "high": 229.5, "low": 224.0, "close": 224.0}, {"time": "2026-05-25", "open": 229.0, "high": 235.5, "low": 222.0, "close": 235.0}, {"time": "2026-05-26", "open": 237.0, "high": 237.0, "low": 229.5, "close": 235.0}, {"time": "2026-05-27", "open": 242.0, "high": 251.0, "low": 240.0, "close": 249.0}, {"time": "2026-05-28", "open": 245.0, "high": 251.0, "low": 228.5, "close": 233.0}, {"time": "2026-05-29", "open": 240.0, "high": 243.0, "low": 220.0, "close": 220.0}, {"time": "2026-06-01", "open": 220.5, "high": 228.5, "low": 212.5, "close": 225.0}, {"time": "2026-06-02", "open": 223.5, "high": 227.0, "low": 216.0, "close": 224.0}, {"time": "2026-06-03", "open": 229.5, "high": 236.0, "low": 223.0, "close": 227.5}, {"time": "2026-06-04", "open": 224.0, "high": 228.0, "low": 214.5, "close": 214.5}, {"time": "2026-06-05", "open": 212.0, "high": 222.0, "low": 210.5, "close": 214.0}, {"time": "2026-06-08", "open": 193.0, "high": 199.5, "low": 193.0, "close": 198.5}, {"time": "2026-06-09", "open": 204.0, "high": 207.0, "low": 194.0, "close": 201.5}, {"time": "2026-06-10", "open": 197.0, "high": 203.5, "low": 191.0, "close": 191.0}, {"time": "2026-06-11", "open": 190.5, "high": 193.5, "low": 183.0, "close": 190.5}, {"time": "2026-06-12", "open": 198.0, "high": 200.5, "low": 194.5, "close": 196.0}, {"time": "2026-06-15", "open": 200.0, "high": 202.0, "low": 196.5, "close": 200.5}, {"time": "2026-06-16", "open": 203.0, "high": 204.5, "low": 194.0, "close": 194.5}, {"time": "2026-06-17", "open": 193.5, "high": 199.0, "low": 190.5, "close": 198.5}, {"time": "2026-06-18", "open": 200.0, "high": 211.5, "low": 200.0, "close": 204.0}], "4904": [{"time": "2026-05-18", "open": 98.3, "high": 98.9, "low": 96.8, "close": 96.8}, {"time": "2026-05-19", "open": 96.9, "high": 99.5, "low": 96.7, "close": 98.0}, {"time": "2026-05-20", "open": 98.1, "high": 99.4, "low": 97.0, "close": 97.1}, {"time": "2026-05-21", "open": 97.2, "high": 97.5, "low": 95.7, "close": 95.7}, {"time": "2026-05-22", "open": 95.7, "high": 96.7, "low": 94.7, "close": 95.5}, {"time": "2026-05-25", "open": 95.5, "high": 95.6, "low": 94.2, "close": 94.2}, {"time": "2026-05-26", "open": 94.5, "high": 95.5, "low": 94.0, "close": 94.0}, {"time": "2026-05-27", "open": 94.8, "high": 94.8, "low": 92.9, "close": 92.9}, {"time": "2026-05-28", "open": 93.4, "high": 94.9, "low": 93.0, "close": 93.6}, {"time": "2026-05-29", "open": 93.6, "high": 94.9, "low": 93.5, "close": 94.6}, {"time": "2026-06-01", "open": 95.4, "high": 97.6, "low": 94.6, "close": 97.1}, {"time": "2026-06-02", "open": 97.0, "high": 99.6, "low": 97.0, "close": 99.5}, {"time": "2026-06-03", "open": 99.9, "high": 101.5, "low": 98.6, "close": 100.5}, {"time": "2026-06-04", "open": 101.0, "high": 103.0, "low": 99.7, "close": 102.0}, {"time": "2026-06-05", "open": 102.0, "high": 103.0, "low": 100.0, "close": 101.5}, {"time": "2026-06-08", "open": 102.0, "high": 102.5, "low": 100.0, "close": 101.0}, {"time": "2026-06-09", "open": 101.0, "high": 106.0, "low": 100.5, "close": 105.5}, {"time": "2026-06-10", "open": 105.5, "high": 107.5, "low": 105.0, "close": 106.5}, {"time": "2026-06-11", "open": 108.0, "high": 109.5, "low": 107.5, "close": 109.0}, {"time": "2026-06-12", "open": 109.0, "high": 111.0, "low": 107.5, "close": 109.0}, {"time": "2026-06-15", "open": 112.0, "high": 112.0, "low": 109.0, "close": 110.0}, {"time": "2026-06-16", "open": 111.0, "high": 113.0, "low": 110.0, "close": 112.5}, {"time": "2026-06-17", "open": 112.5, "high": 113.5, "low": 107.5, "close": 109.5}, {"time": "2026-06-18", "open": 110.5, "high": 110.5, "low": 108.0, "close": 108.5}], "6770": [{"time": "2026-05-18", "open": 62.0, "high": 63.1, "low": 59.2, "close": 62.0}, {"time": "2026-05-19", "open": 61.5, "high": 62.3, "low": 58.1, "close": 58.5}, {"time": "2026-05-20", "open": 58.7, "high": 59.4, "low": 56.6, "close": 57.8}, {"time": "2026-05-21", "open": 59.3, "high": 61.2, "low": 58.9, "close": 59.1}, {"time": "2026-05-22", "open": 60.3, "high": 64.8, "low": 60.2, "close": 63.8}, {"time": "2026-05-25", "open": 65.0, "high": 68.2, "low": 62.3, "close": 67.6}, {"time": "2026-05-26", "open": 69.9, "high": 73.6, "low": 68.0, "close": 70.8}, {"time": "2026-05-27", "open": 75.9, "high": 77.0, "low": 72.6, "close": 74.8}, {"time": "2026-05-28", "open": 75.6, "high": 82.2, "low": 73.5, "close": 80.7}, {"time": "2026-05-29", "open": 85.4, "high": 88.7, "low": 78.8, "close": 88.7}, {"time": "2026-06-01", "open": 93.2, "high": 94.5, "low": 87.0, "close": 87.0}, {"time": "2026-06-02", "open": 87.0, "high": 88.6, "low": 83.7, "close": 85.9}, {"time": "2026-06-03", "open": 88.0, "high": 88.0, "low": 84.1, "close": 84.6}, {"time": "2026-06-04", "open": 82.9, "high": 83.4, "low": 80.2, "close": 81.0}, {"time": "2026-06-05", "open": 77.0, "high": 77.0, "low": 73.0, "close": 74.6}, {"time": "2026-06-08", "open": 67.2, "high": 68.3, "low": 67.2, "close": 67.5}, {"time": "2026-06-09", "open": 70.4, "high": 71.5, "low": 69.9, "close": 71.5}, {"time": "2026-06-10", "open": 67.0, "high": 67.8, "low": 64.4, "close": 64.4}, {"time": "2026-06-11", "open": 62.6, "high": 65.1, "low": 62.1, "close": 64.4}, {"time": "2026-06-12", "open": 68.0, "high": 68.0, "low": 67.0, "close": 67.2}, {"time": "2026-06-15", "open": 69.6, "high": 73.9, "low": 69.6, "close": 73.3}, {"time": "2026-06-16", "open": 75.0, "high": 77.6, "low": 71.0, "close": 71.0}, {"time": "2026-06-17", "open": 70.1, "high": 72.5, "low": 69.4, "close": 70.2}, {"time": "2026-06-18", "open": 71.5, "high": 75.3, "low": 70.7, "close": 74.2}], "2845": [{"time": "2026-05-18", "open": 12.05, "high": 12.05, "low": 11.95, "close": 11.95}, {"time": "2026-05-19", "open": 11.95, "high": 12.05, "low": 11.95, "close": 12.05}, {"time": "2026-05-20", "open": 12.05, "high": 12.1, "low": 11.95, "close": 11.95}, {"time": "2026-05-21", "open": 12.0, "high": 12.05, "low": 11.95, "close": 12.0}, {"time": "2026-05-22", "open": 12.0, "high": 12.1, "low": 11.95, "close": 12.1}, {"time": "2026-05-25", "open": 12.1, "high": 12.1, "low": 12.0, "close": 12.05}, {"time": "2026-05-26", "open": 12.05, "high": 12.1, "low": 12.0, "close": 12.0}, {"time": "2026-05-27", "open": 12.0, "high": 12.0, "low": 11.9, "close": 11.9}, {"time": "2026-05-28", "open": 11.9, "high": 11.95, "low": 11.85, "close": 11.9}, {"time": "2026-05-29", "open": 11.95, "high": 12.0, "low": 11.85, "close": 11.85}, {"time": "2026-06-01", "open": 11.95, "high": 12.2, "low": 11.85, "close": 12.1}, {"time": "2026-06-02", "open": 12.1, "high": 12.15, "low": 12.0, "close": 12.1}, {"time": "2026-06-03", "open": 12.15, "high": 12.45, "low": 12.1, "close": 12.35}, {"time": "2026-06-04", "open": 12.4, "high": 12.6, "low": 12.35, "close": 12.55}, {"time": "2026-06-05", "open": 12.55, "high": 12.55, "low": 12.35, "close": 12.4}, {"time": "2026-06-08", "open": 12.1, "high": 12.25, "low": 12.05, "close": 12.25}, {"time": "2026-06-09", "open": 12.25, "high": 12.85, "low": 12.25, "close": 12.8}, {"time": "2026-06-10", "open": 12.7, "high": 12.85, "low": 12.65, "close": 12.8}, {"time": "2026-06-11", "open": 12.85, "high": 12.95, "low": 12.65, "close": 12.85}, {"time": "2026-06-12", "open": 12.9, "high": 13.05, "low": 12.85, "close": 12.95}, {"time": "2026-06-15", "open": 13.05, "high": 13.05, "low": 12.8, "close": 12.85}, {"time": "2026-06-16", "open": 12.9, "high": 13.05, "low": 12.8, "close": 12.95}, {"time": "2026-06-17", "open": 13.1, "high": 13.4, "low": 13.0, "close": 13.3}, {"time": "2026-06-18", "open": 13.4, "high": 13.45, "low": 12.95, "close": 12.95}], "1101": [{"time": "2026-05-18", "open": 24.1, "high": 24.15, "low": 23.7, "close": 24.05}, {"time": "2026-05-19", "open": 24.1, "high": 24.4, "low": 24.1, "close": 24.2}, {"time": "2026-05-20", "open": 24.3, "high": 24.4, "low": 24.0, "close": 24.15}, {"time": "2026-05-21", "open": 24.15, "high": 24.35, "low": 23.95, "close": 24.2}, {"time": "2026-05-22", "open": 24.2, "high": 24.2, "low": 23.95, "close": 24.1}, {"time": "2026-05-25", "open": 24.1, "high": 24.45, "low": 23.95, "close": 24.3}, {"time": "2026-05-26", "open": 24.3, "high": 24.6, "low": 23.95, "close": 23.95}, {"time": "2026-05-27", "open": 23.95, "high": 24.05, "low": 23.8, "close": 23.85}, {"time": "2026-05-28", "open": 23.85, "high": 24.0, "low": 23.65, "close": 23.65}, {"time": "2026-05-29", "open": 24.1, "high": 24.4, "low": 23.9, "close": 24.4}, {"time": "2026-06-01", "open": 24.4, "high": 24.7, "low": 24.2, "close": 24.55}, {"time": "2026-06-02", "open": 24.55, "high": 24.8, "low": 24.4, "close": 24.65}, {"time": "2026-06-03", "open": 24.65, "high": 25.2, "low": 24.45, "close": 24.85}, {"time": "2026-06-04", "open": 24.9, "high": 24.95, "low": 24.45, "close": 24.45}, {"time": "2026-06-05", "open": 24.5, "high": 24.6, "low": 24.2, "close": 24.4}, {"time": "2026-06-08", "open": 23.85, "high": 24.0, "low": 23.55, "close": 23.85}, {"time": "2026-06-09", "open": 23.9, "high": 24.15, "low": 23.85, "close": 23.95}, {"time": "2026-06-10", "open": 23.95, "high": 24.25, "low": 23.85, "close": 23.9}, {"time": "2026-06-11", "open": 23.95, "high": 24.35, "low": 23.8, "close": 24.25}, {"time": "2026-06-12", "open": 24.35, "high": 24.85, "low": 24.25, "close": 24.55}, {"time": "2026-06-15", "open": 24.95, "high": 25.4, "low": 24.8, "close": 24.85}, {"time": "2026-06-16", "open": 25.0, "high": 25.1, "low": 24.5, "close": 24.5}, {"time": "2026-06-17", "open": 24.5, "high": 24.8, "low": 24.45, "close": 24.55}, {"time": "2026-06-18", "open": 24.6, "high": 24.8, "low": 24.5, "close": 24.5}]};
+
+document.addEventListener("DOMContentLoaded", () => {
+  Object.entries(ohlcvData).forEach(([code, data]) => {
+    const el = document.getElementById('chart-' + code);
+    if (!el || !data.length) return;
+
+    const chart = LightweightCharts.createChart(el, {
+      width:  el.clientWidth || el.offsetWidth || 700,
+      height: 220,
+      layout: {
+        background: { color: '#fffcf5' },
+        textColor:  '#9a7e55',
+        fontSize:   11,
+      },
+      grid: {
+        vertLines: { color: '#f0e4cc' },
+        horzLines: { color: '#f0e4cc' },
+      },
+      crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+      rightPriceScale: { borderColor: '#e5d5b0' },
+      timeScale: {
+        borderColor:     '#e5d5b0',
+        timeVisible:     true,
+        secondsVisible:  false,
+      },
+    });
+
+    const candles = chart.addCandlestickSeries({
+      upColor:          '#2a7a3a',
+      downColor:        '#b03020',
+      borderUpColor:    '#2a7a3a',
+      borderDownColor:  '#b03020',
+      wickUpColor:      '#2a7a3a',
+      wickDownColor:    '#b03020',
+    });
+    candles.setData(data);
+    chart.timeScale().fitContent();
+
+    // 自適應寬度
+    const ro = new ResizeObserver(() => {
+      chart.applyOptions({ width: el.clientWidth });
+    });
+    ro.observe(el);
+  });
+});
 </script>
 </body>
 </html>
